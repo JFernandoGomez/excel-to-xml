@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        XLSX to XML
+        <h1>XLSX to XML</h1>
         <InputExcel></InputExcel>
       </header>
     </div>
