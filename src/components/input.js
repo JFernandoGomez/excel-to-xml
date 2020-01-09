@@ -30,6 +30,16 @@ const handleXLS = (file, setFileValues) => {
   fileReader.readAsBinaryString(file);
 };
 
+const fileValidName = (name) => {
+  switch (true) {
+    case name.includes('xlsx'):
+    case name.includes('xls'):
+    case name.includes('xlt'):
+      return true;
+    default: return false;
+  }
+} 
+
 const createXMLformValues = (fileValues) => {
   console.log(fileValues);
   if (!fileValues) return;
@@ -59,10 +69,14 @@ const InputExcel = () => {
   let handleChange = (e) => {
     var files = e.target.files, file;
     if (!files || files.length === 0) {
-      console.log('No File selected');
+      console.error('No File selected');
       return;
     }
     file = files[0];
+    if (!fileValidName(file.name)) {
+      console.error('Not the right type of file');
+      return;
+    }
     handleXLS(file, setFileValues);
   }
 
