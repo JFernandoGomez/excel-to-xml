@@ -40,10 +40,20 @@ const fileValidName = (name) => {
   }
 } 
 
+const fixLabel = (label) => {
+  let fixedLabel = label.trim().replace(/ /gi, '_');
+  console.log(fixedLabel);
+  return fixedLabel;
+}
+
 const createXMLformValues = (fileValues) => {
   console.log(fileValues);
   if (!fileValues) return;
-  var xml = builder.create(fileValues)
+  var xml = builder.create(fileValues, {
+    stringify: {
+      name: fixLabel
+    }
+  })
   .end({ pretty: true});
  
   console.log(xml);
