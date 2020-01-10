@@ -41,13 +41,12 @@ const fileValidName = (name) => {
 } 
 
 const fixLabel = (label) => {
+  // trim and replace all spaces
   let fixedLabel = label.trim().replace(/ /gi, '_');
-  console.log(fixedLabel);
   return fixedLabel;
 }
 
 const createXMLformValues = (fileValues) => {
-  console.log(fileValues);
   if (!fileValues) return;
   var xml = builder.create(fileValues, {
     stringify: {
@@ -90,7 +89,7 @@ const InputExcel = () => {
     handleXLS(file, setFileValues);
   }
 
-  console.log(fileValues);
+  // console.log(fileValues);
 
   return (
     <input type="file" id="input" value={fileName} onChange={handleChange} />
