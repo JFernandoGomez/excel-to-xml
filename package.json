@@ -10,7 +10,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
-    "xlsx": "^0.15.4",
+    "xlsx": "^0.17.0",
     "xmlbuilder": "^13.0.2"
   },
   "homepage": "https://jfernandogomez.github.io/excel-to-xml",
